@@ -111,17 +111,19 @@
     } else {
       relatedReveals.forEach(function(el){ el.classList.add("in"); });
     }
-    /* safety net, same as site.js: some mobile browsers don't fire IntersectionObserver
-       for elements already in view, leaving them stuck invisible */
-    function revealRelatedVisible(){
-      relatedReveals.forEach(function(el){
-        if(el.classList.contains("in")) return;
+    /* safety net, same as site.js: checked every animation frame rather than on
+       scroll events, since a slow scroll that ends at max-scroll can leave no more
+       scroll events to catch the last section with */
+    var pendingRelatedReveals = relatedReveals.slice();
+    function revealRelatedVisibleFrame(){
+      pendingRelatedReveals = pendingRelatedReveals.filter(function(el){
         var r = el.getBoundingClientRect();
-        if(r.top < window.innerHeight*0.92 && r.bottom > 0) el.classList.add("in");
+        if(r.top < window.innerHeight*0.92 && r.bottom > 0){ el.classList.add("in"); return false; }
+        return true;
       });
+      if(pendingRelatedReveals.length) requestAnimationFrame(revealRelatedVisibleFrame);
     }
-    revealRelatedVisible();
-    window.addEventListener("scroll", revealRelatedVisible, {passive:true});
+    requestAnimationFrame(revealRelatedVisibleFrame);
 
     window.scrollTo(0, 0);
   }

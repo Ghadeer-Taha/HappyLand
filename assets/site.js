@@ -63,18 +63,23 @@
 
   /* Safety net: some mobile browsers don't fire IntersectionObserver for elements
      already in view, leaving them stuck at opacity:0. Reveal anything actually visible
-     right now — checked on load/scroll/resize — without ever touching elements that
-     are still off-screen, so the scroll-in animation for the rest of the page is kept. */
-  function revealVisible(){
-    reveals.forEach(function(el){
-      if(el.classList.contains('in')) return;
+     right now, without ever touching elements that are still off-screen, so the
+     scroll-in animation for the rest of the page is kept.
+     Checked every animation frame rather than on 'scroll'/'resize' events — a slow,
+     deliberate scroll to the very bottom of a page can end with no more scroll events
+     ever firing (you're already at max scroll), so an event-only check can miss the
+     last section entirely. A per-frame check can't miss it, and stops itself once
+     everything still on the page has been revealed. */
+  var pendingReveals = reveals.slice();
+  function revealVisibleFrame(){
+    pendingReveals = pendingReveals.filter(function(el){
       var r=el.getBoundingClientRect();
-      if(r.top<window.innerHeight*0.92 && r.bottom>0) el.classList.add('in');
+      if(r.top<window.innerHeight*0.92 && r.bottom>0){ el.classList.add('in'); return false; }
+      return true;
     });
+    if(pendingReveals.length) requestAnimationFrame(revealVisibleFrame);
   }
-  revealVisible();
-  window.addEventListener('scroll',revealVisible,{passive:true});
-  window.addEventListener('resize',revealVisible);
+  requestAnimationFrame(revealVisibleFrame);
 
   /* --- count-up counters --- */
   var counters=document.querySelectorAll('[data-count]');
