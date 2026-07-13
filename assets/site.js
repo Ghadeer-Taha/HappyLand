@@ -46,7 +46,7 @@
   /* --- dropdown (click toggle on mobile) --- */
   document.querySelectorAll('.has-drop .drop-t').forEach(function(t){
     t.addEventListener('click',function(e){
-      if(window.matchMedia('(max-width:980px)').matches){
+      if(window.matchMedia('(max-width:1360px)').matches){
         e.preventDefault(); t.parentElement.classList.toggle('open');
       }
     });

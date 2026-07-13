@@ -102,14 +102,27 @@
     });
     document.getElementById("pd-related-section").hidden = !relatedWrap.children.length;
 
+    var relatedReveals = [].slice.call(relatedWrap.querySelectorAll("[data-anim]"));
     if("IntersectionObserver" in window){
       var io = new IntersectionObserver(function(entries){
         entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
       },{threshold:.16,rootMargin:"0px 0px -8% 0px"});
-      relatedWrap.querySelectorAll("[data-anim]").forEach(function(el){ io.observe(el); });
+      relatedReveals.forEach(function(el){ io.observe(el); });
     } else {
-      relatedWrap.querySelectorAll("[data-anim]").forEach(function(el){ el.classList.add("in"); });
+      relatedReveals.forEach(function(el){ el.classList.add("in"); });
     }
+    /* safety net, same as site.js: some mobile browsers don't fire IntersectionObserver
+       for elements already in view, leaving them stuck invisible */
+    function revealRelatedVisible(){
+      relatedReveals.forEach(function(el){
+        if(el.classList.contains("in")) return;
+        var r = el.getBoundingClientRect();
+        if(r.top < window.innerHeight*0.92 && r.bottom > 0) el.classList.add("in");
+      });
+    }
+    revealRelatedVisible();
+    window.addEventListener("scroll", revealRelatedVisible, {passive:true});
+    setTimeout(function(){ relatedReveals.forEach(function(el){ el.classList.add("in"); }); }, 2500);
 
     window.scrollTo(0, 0);
   }
