@@ -53,13 +53,28 @@
   });
 
   /* --- reveal on scroll --- */
-  var reveals=document.querySelectorAll('[data-anim],.step');
+  var reveals=[].slice.call(document.querySelectorAll('[data-anim],.step'));
   if('IntersectionObserver' in window){
     var io=new IntersectionObserver(function(entries){
       entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
     },{threshold:.16,rootMargin:'0px 0px -8% 0px'});
     reveals.forEach(function(el){io.observe(el);});
   } else { reveals.forEach(function(el){el.classList.add('in');}); }
+
+  /* Safety net: some mobile browsers don't fire IntersectionObserver for elements
+     already in view on load, leaving them stuck at opacity:0. Force-reveal anything
+     visible on scroll/load, and force-reveal everything after a short delay regardless. */
+  function revealVisible(){
+    reveals.forEach(function(el){
+      if(el.classList.contains('in')) return;
+      var r=el.getBoundingClientRect();
+      if(r.top<window.innerHeight*0.92 && r.bottom>0) el.classList.add('in');
+    });
+  }
+  revealVisible();
+  window.addEventListener('scroll',revealVisible,{passive:true});
+  window.addEventListener('resize',revealVisible);
+  setTimeout(function(){ reveals.forEach(function(el){ el.classList.add('in'); }); },2500);
 
   /* --- count-up counters --- */
   var counters=document.querySelectorAll('[data-count]');
