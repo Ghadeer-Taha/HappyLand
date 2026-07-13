@@ -10,6 +10,10 @@
     window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
   }
 
+  /* --- contact form: mockup only, no backend wired up yet --- */
+  var form=document.querySelector('.form');
+  if(form){ form.addEventListener('submit',function(e){ e.preventDefault(); }); }
+
   /* --- mobile menu --- */
   var burger=document.querySelector('.burger'), menu=document.querySelector('.menu');
   if(burger&&menu){
@@ -124,4 +128,67 @@
 
   /* --- year in footer --- */
   var y=document.querySelector('[data-year]'); if(y)y.textContent=new Date().getFullYear();
+
+  /* --- certificate thumbnail zoom lightbox --- */
+  var certBox=document.querySelector('.cert-lightbox');
+  if(certBox){
+    var certImg=certBox.querySelector('img'), certTitle=certBox.querySelector('b'), certPdfLink=certBox.querySelector('.cert-pdf-link');
+    document.querySelectorAll('.cert-thumb').forEach(function(t){
+      t.addEventListener('click',function(){
+        certImg.src=t.dataset.full; certImg.alt=t.dataset.name;
+        certTitle.textContent=t.dataset.name;
+        certPdfLink.href=t.dataset.pdf;
+        certBox.classList.add('on');
+      });
+    });
+    certBox.addEventListener('click',function(e){ if(e.target===certBox) certBox.classList.remove('on'); });
+    certBox.querySelector('.cert-lightbox-close').addEventListener('click',function(){ certBox.classList.remove('on'); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape') certBox.classList.remove('on'); });
+  }
+
+  /* --- interactive Gulf map: hover/tap a country or pin for details --- */
+  var imap=document.querySelector('.interactive-map');
+  if(imap){
+    var tip=imap.querySelector('.im-tooltip');
+    var countries=[].slice.call(imap.querySelectorAll('.im-country'));
+    var pins=[].slice.call(imap.querySelectorAll('.im-pin'));
+    var info={
+      "Saudi Arabia":{full:"Kingdom of Saudi Arabia",flag:'<svg viewBox="0 0 60 40"><rect width="60" height="40" fill="#0f7a3d"/><rect x="9" y="24" width="34" height="3.4" rx="1.7" fill="#fff"/><circle cx="47" cy="25.7" r="2.6" fill="#fff"/><path d="M9 24c4-3 8-3 12 0" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>'},
+      "UAE":{full:"United Arab Emirates",flag:'<svg viewBox="0 0 60 40"><rect width="60" height="40" fill="#fff"/><rect x="15" width="45" height="13.33" fill="#00732F"/><rect x="15" y="13.33" width="45" height="13.34" fill="#fff"/><rect x="15" y="26.67" width="45" height="13.33" fill="#000"/><rect width="15" height="40" fill="#FF0000"/></svg>'},
+      "Bahrain":{full:"Kingdom of Bahrain",flag:'<svg viewBox="0 0 60 40"><rect width="60" height="40" fill="#CE1126"/><path d="M0 0 H22 L14 4 22 8 14 12 22 16 14 20 22 24 14 28 22 32 14 36 22 40 H0 Z" fill="#fff"/></svg>'},
+      "Kuwait":{full:"State of Kuwait",flag:'<svg viewBox="0 0 60 40"><rect width="60" height="40" fill="#fff"/><rect width="60" height="13.33" fill="#007A3D"/><rect y="26.67" width="60" height="13.33" fill="#CE1126"/><path d="M0 0 L20 0 8 20 20 40 0 40 Z" fill="#000"/></svg>'},
+      "Qatar":{full:"State of Qatar",flag:'<svg viewBox="0 0 60 40"><rect width="60" height="40" fill="#8A1538"/><path d="M0 0 H18 L10 4 18 8 10 12 18 16 10 20 18 24 10 28 18 32 10 36 18 40 H0 Z" fill="#fff"/></svg>'}
+    };
+    function setActive(name){
+      countries.forEach(function(c){ c.classList.toggle('im-active', c.dataset.country===name); });
+      pins.forEach(function(p){ p.classList.toggle('im-active', p.dataset.country===name); });
+    }
+    function showTip(name, anchorEl){
+      var d=info[name]; if(!d) return;
+      tip.innerHTML='<span class="flag-ic">'+d.flag+'</span><span><b>'+name+'</b><span>'+d.full+'</span></span>';
+      var svg=imap.querySelector('svg'); var svgBox=svg.getBoundingClientRect(); var mapBox=imap.getBoundingClientRect();
+      var pt=anchorEl.getBoundingClientRect();
+      var x=(pt.left+pt.right)/2 - mapBox.left;
+      var yTop=pt.top - mapBox.top;
+      tip.style.left=x+'px'; tip.style.top=yTop+'px';
+      tip.classList.add('on');
+      setActive(name);
+    }
+    function hideTip(){ tip.classList.remove('on'); setActive(null); }
+    function bind(el){
+      var name=el.dataset.country;
+      el.addEventListener('mouseenter',function(){ showTip(name, el); });
+      el.addEventListener('mouseleave',hideTip);
+      el.addEventListener('click',function(e){
+        e.stopPropagation();
+        if(tip.classList.contains('on') && tip.dataset.current===name){ hideTip(); tip.dataset.current=''; }
+        else { showTip(name, el); tip.dataset.current=name; }
+      });
+      el.setAttribute('tabindex','0');
+      el.addEventListener('focus',function(){ showTip(name, el); });
+      el.addEventListener('blur',hideTip);
+    }
+    countries.forEach(bind); pins.forEach(bind);
+    document.addEventListener('click',function(){ hideTip(); tip.dataset.current=''; });
+  }
 })();

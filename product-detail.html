@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Premium Roomy Cheese — Happy Land Dairy Products</title>
-<meta name="description" content="Happy Land premium Roumy cheese — plain, with cumin, mature and with black pepper. Traditionally matured for rich flavour and consistent quality.">
+<title>Product — Happy Land Dairy Products</title>
+<meta name="description" content="Happy Land dairy product details — premium cheese, butter and ghee made from carefully selected milk for retail, food-service and export markets.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -25,7 +25,7 @@
     <nav class="menu" id="menu">
       <a href="index.html">Home</a>
       <div class="has-drop"><a href="#" class="drop-t">About <span class="chev">▾</span></a><div class="drop"><a href="about.html">About Us</a><a href="brands.html">Our Brands</a><a href="partners.html">Strategic Partners</a></div></div>
-      <div class="has-drop"><a href="#" class="drop-t active">Products <span class="chev">▾</span></a><div class="drop"><a href="category-butter-ghee.html">Natural Butter &amp; Ghee</a><a href="category-roomy.html" class="active">Premium Roomy Cheese</a><a href="category-natural-cheese.html">Natural Cheese</a><a href="category-analogue.html">Analogue Cheese</a></div></div>
+      <div class="has-drop"><a href="#" class="drop-t">Products <span class="chev">▾</span></a><div class="drop"><a href="category-butter-ghee.html">Natural Butter &amp; Ghee</a><a href="category-roomy.html">Premium Roomy Cheese</a><a href="category-natural-cheese.html">Natural Cheese</a><a href="category-analogue.html">Analogue Cheese</a></div></div>
       <div class="has-drop"><a href="#" class="drop-t">Our Factory <span class="chev">▾</span></a><div class="drop"><a href="production.html">Production Capacity</a><a href="certifications.html">Quality Policy</a><a href="laboratory.html">Quality Control Laboratory</a><a href="private-label.html">Private Label &amp; OEM</a></div></div>
       <a href="export.html">Export</a>
       <a href="contact.html">Contact</a>
@@ -35,47 +35,47 @@
 </header>
 
 <section class="phero">
-  <div class="bgimg"><img src="img/77fa3d6a-4cdc-4e62-b1d8-7323c5c756f5.jpg" alt=""></div>
+  <div class="bgimg"><img id="pd-bgimg" src="" alt=""></div>
   <div class="wrap" data-anim="up">
-    <div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="products.html">Products</a> &nbsp;/&nbsp; <b>Premium Roomy Cheese</b></div>
-    <h1>Premium Roomy Cheese.</h1>
-    <p>Produced using traditional manufacturing techniques to achieve rich flavour, ideal texture and consistent quality — matured to perfection.</p>
+    <div class="crumb" id="pd-crumb"></div>
+    <h1 id="pd-title"></h1>
   </div>
 </section>
 
 <section class="sec">
   <div class="wrap">
-    <div class="shead center" data-anim="up"><span class="eyebrow center-line">Products in this Category</span><h2 class="h-lg">Our Roumy range</h2></div>
-    <div class="cat-grid">
-      <a class="card" href="product-detail.html#plain-roomy-cheese" data-anim="up"><div class="ph"><img src="img/77fa3d6a-4cdc-4e62-b1d8-7323c5c756f5.jpg" alt="Plain Roomy Cheese"></div><div class="bd"><h3>Plain Roomy Cheese</h3><p>Classic full-cream Roumy — rich, nutty and matured to a firm, sliceable finish.</p><span class="more">View Details <span class="arw">→</span></span></div></a>
-      <a class="card" href="product-detail.html#roomy-with-cumin" data-anim="up"><div class="ph"><img src="img/b7a583d8-b8ec-43da-ac63-2709eb14cbd3.jpg" alt="Roomy Cheese with Cumin"></div><div class="bd"><h3>Roomy with Cumin</h3><p>Traditional Roumy blended with cumin for a warm, aromatic depth of flavour.</p><span class="more">View Details <span class="arw">→</span></span></div></a>
-      <a class="card" href="product-detail.html#mature-roomy-cheese" data-anim="up"><div class="ph"><img src="img/d1624e56-53c0-462b-957e-165242d2d689.jpg" alt="Mature Roomy Cheese"></div><div class="bd"><h3>Mature Roomy Cheese</h3><p>Extended ageing delivers a sharper, more intense character for connoisseurs.</p><span class="more">View Details <span class="arw">→</span></span></div></a>
-      <a class="card" href="product-detail.html#roomy-with-black-pepper" data-anim="up"><div class="ph"><img src="img/77fa3d6a-4cdc-4e62-b1d8-7323c5c756f5.jpg" alt="Roomy Cheese with Black Pepper"></div><div class="bd"><h3>Roomy with Black Pepper</h3><p>A bold twist on the classic — studded with cracked black pepper.</p><span class="more">View Details <span class="arw">→</span></span></div></a>
+    <div class="split">
+      <div data-anim="left">
+        <div class="split-media">
+          <span class="brandtag" id="pd-brandtag" hidden></span>
+          <img id="pd-image" src="" alt="">
+        </div>
+        <div class="pd-thumbs" id="pd-thumbs" hidden></div>
+      </div>
+      <div data-anim="right">
+        <span class="eyebrow" id="pd-category"></span>
+        <h2 class="h-lg u-mt-14 u-mb-14" id="pd-name"></h2>
+        <p class="lead" id="pd-desc"></p>
+        <p class="u-muted u-mt-16">Available in retail, food-service and export pack sizes. Full specifications, packaging options and pricing available on request.</p>
+        <h3 class="pd-comp-h">Composition</h3>
+        <ul class="pd-comp" id="pd-ingredients" hidden></ul>
+        <p class="u-muted" id="pd-ingredients-fallback">Full ingredient and composition details are available on request.</p>
+        <div class="cta-row u-mt-26">
+          <a href="contact.html" class="btn btn-primary">Request Pricing <span class="arw">→</span></a>
+          <a href="products.html" id="pd-back" class="btn btn-outline">← Back to Category</a>
+        </div>
+      </div>
     </div>
-     </div>
+  </div>
 </section>
-<section class="sec u-pt-tight u-bg-cream">
+
+<section class="sec process" id="pd-related-section">
   <div class="wrap">
-    <div class="shead center" data-anim="up">
-      <span class="eyebrow center-line">Our brands</span>
-      <h2 class="h-lg">A portfolio of trusted names</h2>
-    </div>
-  </div>
-  <div class="logo-marquee">
-    <div class="lm-track">
-      <div class="lm-item"><img src="img/brand-happyland.png" alt="Happy Land"></div>
-      <div class="lm-item"><img src="img/brand-jarah.png" alt="JARAH"></div>
-      <div class="lm-item"><img src="img/brand-cheeseland.png" alt="Cheese Land"></div>
-      <div class="lm-item"><img src="img/brand-goldenplate.png" alt="Golden Plate"></div>
-      <div class="lm-item"><img src="img/brand-foodgate.png" alt="Food Gate"></div>
-      <div class="lm-item" aria-hidden="true"><img src="img/brand-happyland.png" alt=""></div>
-      <div class="lm-item" aria-hidden="true"><img src="img/brand-jarah.png" alt=""></div>
-      <div class="lm-item" aria-hidden="true"><img src="img/brand-cheeseland.png" alt=""></div>
-      <div class="lm-item" aria-hidden="true"><img src="img/brand-goldenplate.png" alt=""></div>
-      <div class="lm-item" aria-hidden="true"><img src="img/brand-foodgate.png" alt=""></div>
-    </div>
+    <div class="shead center" data-anim="up"><span class="eyebrow center-line">Explore More</span><h2 class="h-lg" id="pd-related-title">More from this category</h2></div>
+    <div class="cat-grid" id="pd-related"></div>
   </div>
 </section>
+
 <footer class="footer">
   <div class="wrap">
     <div class="grid">
@@ -106,6 +106,8 @@
   <span class="halo"></span>
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.017 2C6.492 2 2 6.477 2 11.994c0 2.096.652 4.032 1.762 5.629L2.5 22l4.505-1.226a10.02 10.02 0 005.012 1.34h.004c5.524 0 10.017-4.477 10.017-9.994C22.038 6.6 17.545 2 12.017 2zm0 18.181h-.003a8.16 8.16 0 01-4.16-1.14l-.298-.177-3.093.842.826-3.012-.194-.309a8.128 8.128 0 01-1.257-4.391c0-4.494 3.667-8.153 8.183-8.153 2.187 0 4.243.85 5.79 2.394a8.107 8.107 0 012.393 5.766c-.001 4.494-3.669 8.18-8.187 8.18z"/></svg>
 </a>
+<script src="assets/products-data.js"></script>
+<script src="assets/product.js"></script>
 <script src="assets/site.js"></script>
 </body>
 </html>
