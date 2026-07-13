@@ -122,7 +122,6 @@
     }
     revealRelatedVisible();
     window.addEventListener("scroll", revealRelatedVisible, {passive:true});
-    setTimeout(function(){ relatedReveals.forEach(function(el){ el.classList.add("in"); }); }, 2500);
 
     window.scrollTo(0, 0);
   }

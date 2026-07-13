@@ -62,8 +62,9 @@
   } else { reveals.forEach(function(el){el.classList.add('in');}); }
 
   /* Safety net: some mobile browsers don't fire IntersectionObserver for elements
-     already in view on load, leaving them stuck at opacity:0. Force-reveal anything
-     visible on scroll/load, and force-reveal everything after a short delay regardless. */
+     already in view, leaving them stuck at opacity:0. Reveal anything actually visible
+     right now — checked on load/scroll/resize — without ever touching elements that
+     are still off-screen, so the scroll-in animation for the rest of the page is kept. */
   function revealVisible(){
     reveals.forEach(function(el){
       if(el.classList.contains('in')) return;
@@ -74,7 +75,6 @@
   revealVisible();
   window.addEventListener('scroll',revealVisible,{passive:true});
   window.addEventListener('resize',revealVisible);
-  setTimeout(function(){ reveals.forEach(function(el){ el.classList.add('in'); }); },2500);
 
   /* --- count-up counters --- */
   var counters=document.querySelectorAll('[data-count]');
