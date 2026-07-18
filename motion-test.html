@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Motion Diagnostic</title>
+<style>
+  body{font-family:monospace;font-size:15px;line-height:1.6;padding:20px;background:#111;color:#0f0;max-width:600px;margin:0 auto}
+  h1{color:#fff;font-size:18px}
+  .row{border-bottom:1px solid #333;padding:10px 0}
+  .label{color:#8f8}
+  .pass{color:#0f0;font-weight:bold}
+  .fail{color:#f55;font-weight:bold}
+  .box{width:100%;height:40px;background:#0af;margin:20px 0;position:relative;overflow:hidden;border-radius:6px}
+  .track{display:flex;width:200%;height:100%;animation:slide 3s linear infinite}
+  .track span{flex:1;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:bold}
+  @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  .fadebox{opacity:0;transform:translateY(20px);transition:1.2s ease;width:100%;height:40px;background:#f80;margin:10px 0;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:bold}
+  .fadebox.in{opacity:1;transform:none}
+  #result{white-space:pre-wrap;background:#000;padding:14px;border-radius:8px;margin-top:16px;font-size:13px}
+  button{background:#0af;color:#fff;border:0;padding:12px 20px;border-radius:6px;font-size:15px;margin-top:16px}
+</style>
+</head>
+<body>
+<h1>Happy Land — Motion Diagnostic</h1>
+<p>This page checks whether your phone/browser is actually running CSS animations. Scroll down, wait 3 seconds, then read (or screenshot) the report at the bottom.</p>
+
+<div class="box"><div class="track" id="track"><span>MOVING BOX — if this text is sliding left/right, animation works</span><span>MOVING BOX — if this text is sliding left/right, animation works</span></div></div>
+
+<div class="fadebox" id="fadebox">FADE-IN BOX — should appear after a moment</div>
+
+<div class="row"><span class="label">User agent:</span><br><span id="ua"></span></div>
+<div class="row"><span class="label">prefers-reduced-motion:</span> <span id="prm"></span></div>
+<div class="row"><span class="label">hover:hover supported:</span> <span id="hov"></span></div>
+<div class="row"><span class="label">pointer type:</span> <span id="ptr"></span></div>
+<div class="row"><span class="label">IntersectionObserver supported:</span> <span id="io"></span></div>
+
+<button onclick="runCheck()">Run motion check (tap after waiting 3s)</button>
+<div id="result"></div>
+
+<script>
+document.getElementById('ua').textContent = navigator.userAgent;
+document.getElementById('prm').textContent = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'REDUCE (device wants less motion)' : 'no-preference (normal)';
+document.getElementById('hov').textContent = window.matchMedia('(hover: hover)').matches ? 'yes' : 'no (touch device, expected)';
+document.getElementById('ptr').textContent = window.matchMedia('(pointer: coarse)').matches ? 'coarse (touch)' : window.matchMedia('(pointer: fine)').matches ? 'fine (mouse)' : 'unknown';
+document.getElementById('io').textContent = ('IntersectionObserver' in window) ? 'yes' : 'NO — this would break scroll reveals';
+
+var reveals = document.querySelectorAll('.fadebox');
+if('IntersectionObserver' in window){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.16});
+  reveals.forEach(function(el){ io.observe(el); });
+} else {
+  reveals.forEach(function(el){ el.classList.add('in'); });
+}
+
+function runCheck(){
+  var track = document.getElementById('track');
+  var cs = getComputedStyle(track);
+  var t1 = track.getBoundingClientRect().left;
+  setTimeout(function(){
+    var t2 = track.getBoundingClientRect().left;
+    var fadebox = document.getElementById('fadebox');
+    var fcs = getComputedStyle(fadebox);
+    var report =
+      "animation-name: " + cs.animationName + "\n" +
+      "animation-play-state: " + cs.animationPlayState + "\n" +
+      "animation-duration: " + cs.animationDuration + "\n" +
+      "box position changed after 400ms: " + (t1 !== t2 ? "YES (moving)" : "NO (frozen)") + "\n" +
+      "fade box opacity: " + fcs.opacity + " (should be 1)\n" +
+      "fade box has 'in' class: " + fadebox.classList.contains('in');
+    document.getElementById('result').textContent = report;
+  },400);
+}
+</script>
+</body>
+</html>
