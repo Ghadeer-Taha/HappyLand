@@ -29,7 +29,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
-  font-family:"Inter",system-ui,Arial,sans-serif;
+  font-family:"Inter","Cairo",system-ui,Arial,sans-serif;
   color:var(--ink);
   background:var(--paper);
   line-height:1.65;
@@ -39,7 +39,7 @@ body{
 img{max-width:100%;display:block}
 p,blockquote{text-align:justify;text-align-last:left;hyphens:auto;-webkit-hyphens:auto;-ms-hyphens:auto}
 a{color:inherit;text-decoration:none}
-h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;letter-spacing:-.01em}
+h1,h2,h3,h4{font-family:"Sora","Cairo",sans-serif;line-height:1.08;font-weight:700;letter-spacing:-.01em}
 
 .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(18px,4vw,40px)}
 .sec{padding:clamp(64px,9vw,120px) 0}
@@ -48,7 +48,7 @@ h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;lette
 /* ---- shared bits ---------------------------------------------------------*/
 .eyebrow{
   display:inline-flex;align-items:center;gap:10px;
-  font-family:"Sora",sans-serif;font-weight:600;font-size:13px;
+  font-family:"Sora","Cairo",sans-serif;font-weight:600;font-size:13px;
   letter-spacing:.16em;text-transform:uppercase;color:var(--green-d);
 }
 .eyebrow::before{content:"";width:26px;height:2px;background:var(--lime);display:inline-block}
@@ -61,7 +61,7 @@ h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;lette
 
 .btn{
   display:inline-flex;align-items:center;gap:10px;
-  font-family:"Sora",sans-serif;font-weight:600;font-size:.95rem;
+  font-family:"Sora","Cairo",sans-serif;font-weight:600;font-size:.95rem;
   padding:15px 26px;border-radius:999px;border:1.6px solid transparent;
   cursor:pointer;transition:.35s var(--ease);will-change:transform;
 }
@@ -93,10 +93,10 @@ h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;lette
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:80px}
 .brand{display:flex;align-items:center;gap:12px}
 .brand img{height:52px;width:auto;border-radius:10px}
-.brand b{font-family:"Sora",sans-serif;font-size:1.18rem;letter-spacing:-.02em;color:var(--green-dd);line-height:1}
-.brand small{display:block;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--green);font-weight:600;font-family:"Sora",sans-serif}
+.brand b{font-family:"Sora","Cairo",sans-serif;font-size:1.18rem;letter-spacing:-.02em;color:var(--green-dd);line-height:1}
+.brand small{display:block;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--green);font-weight:600;font-family:"Sora","Cairo",sans-serif}
 .menu{display:flex;gap:6px;align-items:center}
-.menu a{font-family:"Sora",sans-serif;font-weight:500;font-size:.94rem;padding:10px 16px;border-radius:999px;color:var(--ink);transition:.25s}
+.menu a{font-family:"Sora","Cairo",sans-serif;font-weight:500;font-size:.94rem;padding:10px 16px;border-radius:999px;color:var(--ink);transition:.25s}
 @media(hover:hover){.menu a:hover,.menu a.active{background:rgba(46,158,66,.1);color:var(--green-d)}}
 .nav-cta{display:flex;align-items:center;gap:14px}
 .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
@@ -121,7 +121,7 @@ h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;lette
 .hero .wrap{position:relative;z-index:5;width:100%}
 .hero-inner{max-width:660px;color:#fff}
 .hero .tag{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
-  padding:8px 16px;border-radius:999px;font-family:"Sora",sans-serif;font-weight:600;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:22px}
+  padding:8px 16px;border-radius:999px;font-family:"Sora","Cairo",sans-serif;font-weight:600;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:22px}
 .hero .tag .pip{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 4px rgba(141,198,63,.3)}
 .hero h1{font-size:clamp(2.5rem,6vw,4.7rem);color:#fff;margin-bottom:20px}
 .hero h1 em{font-style:normal;color:var(--lime-l)}
@@ -138,7 +138,7 @@ h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;lette
 @media(hover:hover){.arrows button:hover{background:var(--lime);color:var(--green-dd);border-color:var(--lime)}}
 .hero-badges{position:absolute;left:clamp(18px,4vw,40px);bottom:34px;z-index:6;display:flex;gap:10px;flex-wrap:wrap}
 .hero-badges span{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:999px;
-  padding:8px 15px;font-size:.76rem;color:#eaf5ec;font-family:"Sora",sans-serif;font-weight:500;backdrop-filter:blur(4px)}
+  padding:8px 15px;font-size:.76rem;color:#eaf5ec;font-family:"Sora","Cairo",sans-serif;font-weight:500;backdrop-filter:blur(4px)}
 @media(max-width:720px){.hero-badges{display:none}}
 
 /* ---- feature strip -------------------------------------------------------*/
@@ -182,7 +182,7 @@ h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;lette
 .about-media .inset img{width:100%;height:100%;object-fit:cover}
 .exp-badge{position:absolute;left:-22px;top:26px;background:var(--green-dd);color:#fff;border-radius:20px;
   padding:20px 22px;box-shadow:var(--shadow-md);text-align:center}
-.exp-badge b{font-family:"Sora",sans-serif;font-size:2.6rem;line-height:1;color:var(--lime-l);display:block}
+.exp-badge b{font-family:"Sora","Cairo",sans-serif;font-size:2.6rem;line-height:1;color:var(--lime-l);display:block}
 .exp-badge span{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
 .about h2{margin:14px 0 18px}
 .about .ul{list-style:none;margin:26px 0 30px;display:grid;gap:14px}
@@ -190,7 +190,7 @@ h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;lette
 .about .ul .ck{flex:none;width:24px;height:24px;border-radius:50%;background:rgba(46,158,66,.14);color:var(--green-d);
   display:grid;place-items:center;font-size:.8rem;margin-top:2px}
 .sign{display:flex;align-items:center;gap:18px;margin-top:6px}
-.sign .nm{font-family:"Sora",sans-serif;font-weight:700}
+.sign .nm{font-family:"Sora","Cairo",sans-serif;font-weight:700}
 .sign .rl{font-size:.82rem;color:var(--ink-soft)}
 @media(max-width:900px){.about .grid{grid-template-columns:1fr}.exp-badge{left:14px}}
 
@@ -200,7 +200,7 @@ h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;lette
   radial-gradient(600px 300px at 12% -10%,rgba(141,198,63,.22),transparent 60%),
   radial-gradient(600px 300px at 100% 120%,rgba(46,158,66,.28),transparent 60%)}
 .stats .grid{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center}
-.stat b{font-family:"Sora",sans-serif;font-size:clamp(2.4rem,5vw,3.4rem);color:var(--lime-l);display:block;line-height:1}
+.stat b{font-family:"Sora","Cairo",sans-serif;font-size:clamp(2.4rem,5vw,3.4rem);color:var(--lime-l);display:block;line-height:1}
 .stat span{font-size:.9rem;color:#cfe6d4;letter-spacing:.03em}
 .stat{padding:8px;position:relative}
 .stat:not(:last-child)::after{content:"";position:absolute;right:-15px;top:14%;height:72%;width:1px;background:rgba(255,255,255,.14)}
@@ -220,13 +220,13 @@ h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;lette
 .card .ph img{width:100%;height:100%;object-fit:cover;transition:1s var(--ease)}
 @media(hover:hover){.card:hover .ph img{transform:scale(1.07)}}
 .brandtag{position:absolute;top:14px;left:14px;z-index:2;background:rgba(255,255,255,.92);color:var(--green-dd);
-  font-family:"Sora",sans-serif;font-weight:700;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
+  font-family:"Sora","Cairo",sans-serif;font-weight:700;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
   padding:6px 12px;border-radius:999px;box-shadow:var(--shadow-sm)}
 .card .bd{padding:24px 24px 26px;display:flex;flex-direction:column;flex:1}
 .card h3{font-size:1.25rem;margin-bottom:8px}
 .card .ar{font-size:.9rem;color:var(--green-d);font-weight:600;margin-bottom:10px;direction:rtl}
 .card p{font-size:.9rem;color:var(--ink-soft);flex:1}
-.card .more{margin-top:16px;font-family:"Sora",sans-serif;font-weight:600;font-size:.86rem;color:var(--green-d);
+.card .more{margin-top:16px;font-family:"Sora","Cairo",sans-serif;font-weight:600;font-size:.86rem;color:var(--green-d);
   display:inline-flex;gap:8px;align-items:center}
 .card .more .arw{transition:.3s}
 @media(hover:hover){.card:hover .more .arw{transform:translateX(4px)}}
@@ -237,7 +237,7 @@ h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;lette
 .process{background:var(--cream)}
 .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;counter-reset:step}
 .step{position:relative;padding-top:16px}
-.step::before{counter-increment:step;content:"0" counter(step);font-family:"Sora",sans-serif;font-weight:700;
+.step::before{counter-increment:step;content:"0" counter(step);font-family:"Sora","Cairo",sans-serif;font-weight:700;
   font-size:2.4rem;color:var(--lime);opacity:.5;line-height:1}
 .step .bar{height:3px;background:var(--line);margin:16px 0 18px;border-radius:2px;position:relative;overflow:hidden}
 .step .bar::after{content:"";position:absolute;inset:0;width:0;background:var(--green);border-radius:2px;transition:1s var(--ease) .2s}
@@ -251,7 +251,7 @@ h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;lette
 .brands .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 .brandcard{border:1px solid var(--line);border-radius:var(--r-lg);padding:34px;background:var(--white);transition:.35s}
 @media(hover:hover){.brandcard:hover{box-shadow:var(--shadow-md);transform:translateY(-6px)}}
-.brandcard .k{font-family:"Sora",sans-serif;font-weight:700;font-size:1.5rem;color:var(--green-dd)}
+.brandcard .k{font-family:"Sora","Cairo",sans-serif;font-weight:700;font-size:1.5rem;color:var(--green-dd)}
 .brandcard .ka{direction:rtl;color:var(--green);font-weight:700;font-size:1.15rem;margin:2px 0 12px}
 .brandcard p{font-size:.92rem;color:var(--ink-soft)}
 @media(max-width:820px){.brands .grid{grid-template-columns:1fr}}
@@ -279,11 +279,11 @@ h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;lette
 .q-item{min-width:100%;padding:0 clamp(0px,3vw,40px)}
 .q-card{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(30px,5vw,56px);
   box-shadow:var(--shadow-sm);text-align:center;max-width:840px;margin-inline:auto}
-.q-card .mk{font-family:"Sora",sans-serif;font-size:3.4rem;color:var(--lime);line-height:.5;height:34px}
-.q-card blockquote{font-family:"Sora",sans-serif;font-weight:500;font-size:clamp(1.15rem,2.2vw,1.6rem);line-height:1.4;margin:14px 0 26px}
+.q-card .mk{font-family:"Sora","Cairo",sans-serif;font-size:3.4rem;color:var(--lime);line-height:.5;height:34px}
+.q-card blockquote{font-family:"Sora","Cairo",sans-serif;font-weight:500;font-size:clamp(1.15rem,2.2vw,1.6rem);line-height:1.4;margin:14px 0 26px}
 .q-card .who{display:flex;align-items:center;justify-content:center;gap:14px}
 .q-card .who img{width:52px;height:52px;border-radius:50%;object-fit:cover}
-.q-card .who b{font-family:"Sora",sans-serif;display:block}
+.q-card .who b{font-family:"Sora","Cairo",sans-serif;display:block}
 .q-card .who span{font-size:.84rem;color:var(--ink-soft)}
 .q-nav{display:flex;justify-content:center;gap:10px;margin-top:30px}
 .q-nav button{width:11px;height:11px;border-radius:50%;border:0;background:var(--line);cursor:pointer;transition:.3s;padding:0}
@@ -293,7 +293,7 @@ h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;lette
 .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--white);padding:26px 0;overflow:hidden}
 .mq-track{display:flex;gap:64px;width:max-content;animation:mq 26s linear infinite}
 @media(hover:hover){.marquee:hover .mq-track{animation-play-state:paused}}
-.mq-track span{font-family:"Sora",sans-serif;font-weight:600;font-size:1.05rem;color:var(--ink-soft);white-space:nowrap;
+.mq-track span{font-family:"Sora","Cairo",sans-serif;font-weight:600;font-size:1.05rem;color:var(--ink-soft);white-space:nowrap;
   display:flex;align-items:center;gap:14px;opacity:.7}
 .mq-track span::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--lime)}
 @keyframes mq{to{transform:translateX(-50%)}}
@@ -303,7 +303,7 @@ h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;lette
 .export-media{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-md);aspect-ratio:16/11}
 .export-media img{width:100%;height:100%;object-fit:cover}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 30px}
-.chips span{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:7px 12px 7px 8px;font-size:.8rem;font-family:"Sora",sans-serif;
+.chips>span{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:7px 12px 7px 8px;font-size:.8rem;font-family:"Sora","Cairo",sans-serif;
   font-weight:500;color:var(--green-d);background:var(--white);white-space:nowrap}
 .chips svg,.chips img{flex:none;width:16px;height:11px;border-radius:2px;object-fit:cover}
 @media(max-width:820px){.export .grid{grid-template-columns:1fr}}
@@ -326,7 +326,7 @@ h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;lette
 .footer .brand b{color:#fff}
 .footer .brand small{color:var(--lime-l)}
 .footer p{font-size:.9rem;margin-top:16px;max-width:34ch}
-.footer h5{font-family:"Sora",sans-serif;color:#fff;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px}
+.footer h5{font-family:"Sora","Cairo",sans-serif;color:#fff;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px}
 .footer ul{list-style:none;display:grid;gap:11px;font-size:.92rem}
 .footer .social{display:flex;gap:10px;margin-top:20px}
 .footer .social a{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.16);display:grid;place-items:center;transition:.3s}
@@ -346,7 +346,7 @@ h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;lette
 .phero .wrap{position:relative;z-index:2;max-width:760px}
 .phero h1{font-size:clamp(2.2rem,5vw,3.8rem);margin:14px 0 14px}
 .phero p{color:#dcefe0;font-size:1.06rem;max-width:56ch}
-.crumb{font-size:.86rem;color:#bcd8c3;font-family:"Sora",sans-serif}
+.crumb{font-size:.86rem;color:#bcd8c3;font-family:"Sora","Cairo",sans-serif}
 @media(hover:hover){.crumb a:hover{color:#fff}}
 .crumb b{color:var(--lime-l);font-weight:600}
 
@@ -365,7 +365,7 @@ h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;lette
 .tl-row{position:relative;padding:0 0 34px 0}
 .tl-row::before{content:"";position:absolute;left:-34px;top:4px;width:18px;height:18px;border-radius:50%;
   background:var(--white);border:4px solid var(--green);box-shadow:0 0 0 4px rgba(46,158,66,.12)}
-.tl-row .yr{font-family:"Sora",sans-serif;font-weight:700;color:var(--green-d);font-size:1.05rem}
+.tl-row .yr{font-family:"Sora","Cairo",sans-serif;font-weight:700;color:var(--green-d);font-size:1.05rem}
 .tl-row h4{margin:2px 0 6px}
 .tl-row p{font-size:.94rem;color:var(--ink-soft);max-width:60ch}
 
@@ -421,6 +421,8 @@ h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;lette
 @keyframes rs-cloud{from{transform:translateX(0)}to{transform:translateX(-420px)}}
 .route-scene .rs-speedlines{animation:rs-flicker 1.4s ease-in-out infinite}
 @keyframes rs-flicker{0%,100%{opacity:0}50%{opacity:1}}
+@media(max-width:430px){.route-scene .rs-truck{animation-name:rs-drive-sm}}
+@keyframes rs-drive-sm{0%{transform:translateX(-3px)}100%{transform:translateX(4px)}}
 @media(max-width:820px){.split{grid-template-columns:1fr}.split.rev .split-media{order:0}}
 
 /* ---- product gallery thumbnails ------------------------------------------*/
@@ -436,7 +438,7 @@ h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;lette
 .pd-comp-h{font-size:1.05rem;margin:26px 0 12px}
 .pd-comp{list-style:none;display:flex;flex-wrap:wrap;gap:10px}
 .pd-comp[hidden]{display:none}
-.pd-comp li{display:inline-flex;align-items:center;gap:8px;font-family:"Sora",sans-serif;font-weight:600;
+.pd-comp li{display:inline-flex;align-items:center;gap:8px;font-family:"Sora","Cairo",sans-serif;font-weight:600;
   font-size:.82rem;color:var(--green-d);background:var(--cream);border-radius:999px;padding:9px 16px 9px 14px}
 .pd-comp li::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--lime)}
 
@@ -445,14 +447,19 @@ h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;lette
 .ilist li{display:flex;gap:12px;align-items:flex-start;font-size:.97rem}
 .ilist .ck{flex:none;width:24px;height:24px;border-radius:50%;background:rgba(46,158,66,.14);color:var(--green-d);
   display:grid;place-items:center;font-size:.78rem;margin-top:2px}
-.ilist.two{grid-template-columns:1fr 1fr;gap:13px 28px}
-@media(max-width:600px){.ilist.two{grid-template-columns:1fr}}
+.ilist.two{grid-template-columns:repeat(2,minmax(0,300px));justify-content:center;gap:13px 40px;max-width:100%;width:fit-content;margin-inline:auto}
+@media(max-width:680px){.ilist.two{grid-template-columns:1fr;width:100%}}
 
 /* ---- fact tiles ----------------------------------------------------------*/
 .facts{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
 .fact{border:1px solid var(--line);border-radius:var(--r);padding:24px;background:var(--white)}
-.fact b{font-family:"Sora",sans-serif;font-size:2rem;color:var(--green-d);display:block;line-height:1}
-.fact span{font-size:.88rem;color:var(--ink-soft)}
+.fact b{font-family:"Sora","Cairo",sans-serif;font-size:2rem;color:var(--green-d);display:block;line-height:1}
+/* a <b> made of two parts (a digit span + a translated-word span, e.g.
+   "8"+"خطوط") uses flex layout instead of relying on bidi digit-run
+   resolution — flex row always puts the first DOM item at the inline
+   start (left in LTR, right in RTL), keeping "8" first in both languages */
+.fact b:has(span){display:flex;gap:.3em;align-items:baseline}
+.fact>span{font-size:.88rem;color:var(--ink-soft)}
 
 /* ---- lab / feature cards -------------------------------------------------*/
 .lab-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:24px}
@@ -500,7 +507,7 @@ h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;lette
 .gallery figure{margin:0;overflow:hidden;border-radius:var(--r);position:relative}
 .gallery img{width:100%;height:100%;object-fit:cover;transition:.8s var(--ease)}
 @media(hover:hover){.gallery figure:hover img{transform:scale(1.08)}}
-.gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:14px;color:#fff;font-family:"Sora",sans-serif;
+.gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:14px;color:#fff;font-family:"Sora","Cairo",sans-serif;
   font-weight:600;font-size:.9rem;background:linear-gradient(transparent,rgba(9,61,31,.85))}
 .gallery .big{grid-column:span 2;grid-row:span 2}
 .gallery .wide{grid-column:span 2}
@@ -513,11 +520,11 @@ h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;lette
 @media(hover:hover){.cert:hover{box-shadow:var(--shadow-md);transform:translateY(-6px);border-color:transparent}}
 .seal{flex:none;width:92px;height:92px;position:relative;display:grid;place-items:center}
 .seal svg{position:absolute;inset:0;width:100%;height:100%}
-.seal .code{position:relative;font-family:"Sora",sans-serif;font-weight:800;font-size:.86rem;color:var(--green-dd);text-align:center;line-height:1.05}
+.seal .code{position:relative;font-family:"Sora","Cairo",sans-serif;font-weight:800;font-size:.86rem;color:var(--green-dd);text-align:center;line-height:1.05}
 .seal .ring{animation:seal-spin 14s linear infinite;transform-origin:50px 50px}
 @keyframes seal-spin{to{transform:rotate(360deg)}}
 .cert h3{font-size:1.15rem;margin-bottom:4px}
-.cert .std{font-family:"Sora",sans-serif;font-weight:600;color:var(--green-d);font-size:.82rem;letter-spacing:.06em;margin-bottom:8px}
+.cert .std{font-family:"Sora","Cairo",sans-serif;font-weight:600;color:var(--green-d);font-size:.82rem;letter-spacing:.06em;margin-bottom:8px}
 .cert p{font-size:.9rem;color:var(--ink-soft)}
 @media(max-width:760px){.cert-grid{grid-template-columns:1fr}}
 
@@ -528,13 +535,13 @@ h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;lette
 .pcat-media{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-md);aspect-ratio:5/4}
 .pcat-media img{width:100%;height:100%;object-fit:cover;transition:1s var(--ease)}
 @media(hover:hover){.pcat-media:hover img{transform:scale(1.05)}}
-.pcat .num{font-family:"Sora",sans-serif;font-weight:800;font-size:.85rem;color:var(--lime);letter-spacing:.14em}
+.pcat .num{font-family:"Sora","Cairo",sans-serif;font-weight:800;font-size:.85rem;color:var(--lime);letter-spacing:.14em}
 .pcat h2{font-size:clamp(1.7rem,3vw,2.4rem);margin:8px 0 6px}
 .pcat .ar{direction:rtl;color:var(--green-d);font-weight:600;font-size:1.05rem;margin-bottom:14px}
 .pcat p{color:var(--ink-soft);margin-bottom:18px}
 .pill-row{display:flex;flex-wrap:wrap;gap:10px}
 .pill-row span{border:1px solid var(--line);background:var(--white);border-radius:999px;padding:9px 16px;
-  font-size:.86rem;font-family:"Sora",sans-serif;font-weight:500;color:var(--green-d)}
+  font-size:.86rem;font-family:"Sora","Cairo",sans-serif;font-weight:500;color:var(--green-d)}
 @media(max-width:820px){.pcat{grid-template-columns:1fr}.pcat.rev .pcat-media{order:0}}
 
 /* ---- logos strip (brands / partners) ------------------------------------*/
@@ -542,7 +549,7 @@ h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;lette
 .logo-tile{border:1px solid var(--line);border-radius:var(--r);background:var(--white);height:120px;
   display:grid;place-items:center;text-align:center;padding:18px;transition:.35s}
 @media(hover:hover){.logo-tile:hover{box-shadow:var(--shadow-sm);transform:translateY(-4px)}}
-.logo-tile b{font-family:"Sora",sans-serif;font-weight:800;font-size:1.2rem;color:var(--green-dd);letter-spacing:-.01em}
+.logo-tile b{font-family:"Sora","Cairo",sans-serif;font-weight:800;font-size:1.2rem;color:var(--green-dd);letter-spacing:-.01em}
 .logo-tile small{display:block;font-size:.72rem;color:var(--ink-soft);letter-spacing:.1em;text-transform:uppercase;margin-top:4px}
 .logo-tile.muted b{color:#9aa89e;font-weight:700}
 @media(max-width:820px){.logos{grid-template-columns:repeat(2,1fr)}}
@@ -553,7 +560,7 @@ h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;lette
 @media(hover:hover){.market:hover{box-shadow:var(--shadow-md);transform:translateY(-6px);border-color:transparent}}
 .market .flag-ic{width:52px;height:35px;margin:0 auto 14px;border-radius:6px;overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid rgba(0,0,0,.06)}
 .market .flag-ic svg,.market .flag-ic img{width:100%;height:100%;display:block;object-fit:cover}
-.market b{font-family:"Sora",sans-serif;font-size:1rem;color:var(--green-dd);display:block}
+.market b{font-family:"Sora","Cairo",sans-serif;font-size:1rem;color:var(--green-dd);display:block}
 .market span{font-size:.78rem;color:var(--ink-soft)}
 @media(max-width:820px){.markets{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:420px){.markets{grid-template-columns:1fr}}
@@ -575,12 +582,12 @@ h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;lette
 .lm-track{display:flex;gap:28px;width:max-content;align-items:center;animation:lm-scroll 34s linear infinite}
 @media(hover:hover){.logo-marquee:hover .lm-track{animation-play-state:paused}}
 .lm-item{flex:none;width:240px;height:168px;display:flex;align-items:center;justify-content:center;
-  background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:18px 22px;
+  background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:10px 14px;
   box-shadow:var(--shadow-sm);transition:.35s var(--ease)}
 @media(hover:hover){.lm-item:hover{box-shadow:var(--shadow-md);transform:translateY(-4px);border-color:transparent}}
 .lm-item img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
 @keyframes lm-scroll{to{transform:translateX(-50%)}}
-@media(max-width:600px){.lm-item{width:190px;height:130px;padding:14px 18px}}
+@media(max-width:600px){.lm-item{width:190px;height:130px;padding:8px 10px}}
 
 /* ---- strategic partners hub (center medallion + connected logos) ---------*/
 .hub-wrap{position:relative;padding:36px 0}
@@ -592,16 +599,18 @@ h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;lette
   background:linear-gradient(90deg,transparent,var(--lime) 12%,var(--lime) 88%,transparent)}
 .hub-block{position:relative;z-index:1;display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
 .hub-card{position:relative;background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);
-  height:108px;padding:16px 22px;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-sm);transition:.3s var(--ease)}
+  height:108px;padding:8px 12px;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-sm);transition:.3s var(--ease)}
 @media(hover:hover){.hub-card:hover{box-shadow:var(--shadow-md);transform:translateY(-4px);border-color:transparent}}
 .hub-card img{max-width:100%;max-height:100%;object-fit:contain}
 .hub-center{position:relative;z-index:2;width:170px;height:170px;border-radius:50%;background:var(--white);
-  border:3px solid var(--green);display:grid;place-items:center;box-shadow:0 0 0 8px rgba(46,158,66,.1),var(--shadow-lg);padding:24px;margin:0 auto}
-.hub-center img{max-width:100%;max-height:100%;object-fit:contain}
+  border:3px solid var(--green);display:grid;place-items:center;box-shadow:0 0 0 8px rgba(46,158,66,.1),var(--shadow-lg);
+  padding:16px;margin:0 auto;overflow:hidden;transition:.3s var(--ease)}
+@media(hover:hover){.hub-center:hover{transform:scale(1.08);box-shadow:0 0 0 10px rgba(46,158,66,.16),var(--shadow-lg)}}
+.hub-center img{max-width:78%;max-height:78%;object-fit:contain}
 .hub-badges{position:relative;z-index:1;display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:48px}
 .hub-badges .hb{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);background:var(--white);
   border-radius:999px;padding:10px 18px;font-size:.86rem;color:var(--ink-soft)}
-.hub-badges .hb b{font-family:"Sora",sans-serif;color:var(--green-d);font-weight:700}
+.hub-badges .hb b{font-family:"Sora","Cairo",sans-serif;color:var(--green-d);font-weight:700}
 @media(max-width:820px){
   .hub-grid{grid-template-columns:1fr;justify-items:center}
   .hub-grid::before{display:none}
@@ -616,7 +625,7 @@ h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;lette
   box-shadow:0 10px 24px rgba(0,0,0,.28);transition:.3s var(--ease);background:#fff;border:2px solid rgba(255,255,255,.3)}
 @media(hover:hover){.cert-thumb:hover{transform:translateY(-6px) scale(1.05);border-color:var(--lime)}}
 .cert-thumb img{width:100%;height:190px;object-fit:cover;object-position:top;display:block}
-.cert-thumb span{display:block;text-align:center;font-family:"Sora",sans-serif;font-weight:700;font-size:.76rem;
+.cert-thumb span{display:block;text-align:center;font-family:"Sora","Cairo",sans-serif;font-weight:700;font-size:.76rem;
   padding:9px 4px;background:#fff;color:var(--green-dd);letter-spacing:.02em}
 .cert-lightbox{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;
   background:rgba(9,20,14,.88);padding:24px;backdrop-filter:blur(4px)}
@@ -626,7 +635,7 @@ h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;lette
 @keyframes cert-zoom{from{transform:scale(.85);opacity:0}to{transform:scale(1);opacity:1}}
 .cert-lightbox-inner img{width:100%;height:auto;display:block;max-height:66vh;object-fit:contain;background:#fff}
 .cert-lightbox-foot{padding:18px 22px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.cert-lightbox-foot b{font-family:"Sora",sans-serif;color:var(--green-dd);font-size:1rem}
+.cert-lightbox-foot b{font-family:"Sora","Cairo",sans-serif;color:var(--green-dd);font-size:1rem}
 .cert-lightbox-close{position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;
   background:rgba(9,61,31,.85);color:#fff;display:grid;place-items:center;cursor:pointer;border:0;font-size:1.3rem;
   line-height:1;z-index:2;transition:.25s}
@@ -651,7 +660,7 @@ h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;lette
 .im-tooltip::after{content:"";position:absolute;left:50%;top:100%;transform:translateX(-50%);
   border:7px solid transparent;border-top-color:var(--white);filter:drop-shadow(0 2px 1px rgba(0,0,0,.06))}
 .im-tooltip .flag-ic{width:34px;height:23px;flex:none;margin:0}
-.im-tooltip b{display:block;font-family:"Sora",sans-serif;font-size:.92rem;color:var(--green-dd)}
+.im-tooltip b{display:block;font-family:"Sora","Cairo",sans-serif;font-size:.92rem;color:var(--green-dd)}
 .im-tooltip span{display:block;font-size:.76rem;color:var(--ink-soft)}
 .im-hint{text-align:center;font-size:.82rem;color:var(--ink-soft);margin-top:14px}
 @media(max-width:600px){.im-tooltip{padding:10px 13px;min-width:140px}.im-tooltip b{font-size:.84rem}.im-tooltip span{font-size:.7rem}}
@@ -672,7 +681,7 @@ h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;lette
 .form{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(26px,4vw,40px);box-shadow:var(--shadow-sm)}
 .form .frow{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .field{margin-bottom:16px}
-.field label{display:block;font-family:"Sora",sans-serif;font-weight:500;font-size:.84rem;margin-bottom:7px;color:var(--ink)}
+.field label{display:block;font-family:"Sora","Cairo",sans-serif;font-weight:500;font-size:.84rem;margin-bottom:7px;color:var(--ink)}
 .field input,.field textarea,.field select{width:100%;border:1px solid var(--line);border-radius:12px;padding:13px 15px;
   font-family:inherit;font-size:.95rem;color:var(--ink);background:var(--paper);transition:.25s}
 .field input:focus,.field textarea:focus,.field select:focus{outline:0;border-color:var(--green);background:#fff;box-shadow:0 0 0 4px rgba(46,158,66,.12)}
@@ -680,7 +689,7 @@ h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;lette
 .map-frame{position:relative;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-md);border:1px solid var(--line);line-height:0}
 .map-frame iframe{width:100%;height:420px;border:0;display:block}
 .map-pin-label{position:absolute;top:50%;left:50%;transform:translate(6px,-52px);pointer-events:none;z-index:2;white-space:nowrap;line-height:normal}
-.map-pin-label b{display:block;font-family:"Sora",sans-serif;font-weight:700;font-size:.92rem;line-height:1.3;color:#b3261e;text-shadow:0 1px 3px rgba(255,255,255,.9),0 0 6px rgba(255,255,255,.9)}
+.map-pin-label b{display:block;font-family:"Sora","Cairo",sans-serif;font-weight:700;font-size:.92rem;line-height:1.3;color:#b3261e;text-shadow:0 1px 3px rgba(255,255,255,.9),0 0 6px rgba(255,255,255,.9)}
 .map-pin-label small{display:block;font-size:.78rem;line-height:1.3;color:#b3261e;direction:rtl;text-shadow:0 1px 3px rgba(255,255,255,.9),0 0 6px rgba(255,255,255,.9)}
 @media(max-width:820px){.contact-grid{grid-template-columns:1fr}.form .frow{grid-template-columns:1fr}}
 
@@ -726,7 +735,7 @@ h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;lette
 /* ---- misc ----------------------------------------------------------------*/
 .badge-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px;justify-content:center}
 .badge-row .b{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);background:var(--white);
-  border-radius:999px;padding:10px 18px;font-family:"Sora",sans-serif;font-weight:500;font-size:.88rem;color:var(--green-d);
+  border-radius:999px;padding:10px 18px;font-family:"Sora","Cairo",sans-serif;font-weight:500;font-size:.88rem;color:var(--green-d);
   cursor:pointer;transition:.3s var(--ease)}
 .badge-row .b svg{color:var(--green);transition:.3s var(--ease)}
 @media(hover:hover){.badge-row .b:hover{background:var(--green);color:#fff;border-color:transparent;transform:translateY(-4px) scale(1.04);box-shadow:var(--shadow-md)}}
@@ -747,7 +756,7 @@ h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;lette
 .posters figure img{width:100%;height:100%;object-fit:cover;transition:.8s var(--ease)}
 @media(hover:hover){.posters figure:hover img{transform:scale(1.06)}}
 .posters figcaption{position:absolute;left:0;right:0;bottom:0;padding:16px 18px;color:#fff;
-  font-family:"Sora",sans-serif;font-weight:600;font-size:1rem;letter-spacing:-.01em;
+  font-family:"Sora","Cairo",sans-serif;font-weight:600;font-size:1rem;letter-spacing:-.01em;
   background:linear-gradient(transparent,rgba(9,61,31,.82))}
 .posters figcaption small{display:block;font-weight:500;font-size:.74rem;color:var(--lime-l);
   letter-spacing:.08em;text-transform:uppercase;margin-bottom:2px}
@@ -792,7 +801,7 @@ h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;lette
 .policy-statement{position:relative;max-width:860px;margin:0 auto clamp(34px,4vw,48px);background:#fff;
   border:1px solid var(--line);border-left:5px solid var(--green);border-radius:var(--r-lg);
   padding:clamp(28px,4vw,46px);box-shadow:var(--shadow-sm)}
-.policy-statement .mark{font-family:"Sora",sans-serif;font-size:3rem;line-height:.4;color:var(--lime);height:24px;display:block}
+.policy-statement .mark{font-family:"Sora","Cairo",sans-serif;font-size:3rem;line-height:.4;color:var(--lime);height:24px;display:block}
 .policy-statement p{font-size:clamp(1.04rem,1.5vw,1.22rem);color:var(--ink);line-height:1.7}
 .policy-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
 .policy-cards .pc{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:32px;transition:.35s var(--ease)}
@@ -814,7 +823,7 @@ h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;lette
 
 /* ---- language switch (injected into nav via JS) --------------------------*/
 .lang-switch{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--white)}
-.lang-switch button{border:0;background:none;padding:8px 13px;font-family:"Sora",sans-serif;font-weight:600;
+.lang-switch button{border:0;background:none;padding:8px 13px;font-family:"Sora","Cairo",sans-serif;font-weight:600;
   font-size:.8rem;color:var(--ink-soft);cursor:pointer;transition:.25s;line-height:1}
 .lang-switch button.on{background:var(--green);color:#fff}
 @media(hover:hover){.lang-switch button:not(.on):hover{color:var(--green-d)}}
@@ -828,13 +837,11 @@ h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;lette
 .cat-card .ph{aspect-ratio:4/3;overflow:hidden;position:relative}
 .cat-card .ph img{width:100%;height:100%;object-fit:cover;transition:1s var(--ease)}
 @media(hover:hover){.cat-card:hover .ph img{transform:scale(1.07)}}
-.cat-card .ph .idx{position:absolute;top:12px;left:12px;background:rgba(9,61,31,.72);color:#fff;
-  font-family:"Sora",sans-serif;font-weight:700;font-size:.72rem;width:30px;height:30px;border-radius:50%;
-  display:grid;place-items:center;backdrop-filter:blur(3px)}
+.cat-card .ph .idx{display:none}
 .cat-card .bd{padding:22px;display:flex;flex-direction:column;flex:1}
 .cat-card h3{font-size:1.12rem;margin-bottom:8px}
 .cat-card p{font-size:.86rem;color:var(--ink-soft);flex:1}
-.cat-card .more{margin-top:16px;font-family:"Sora",sans-serif;font-weight:600;font-size:.84rem;color:var(--green-d);
+.cat-card .more{margin-top:16px;font-family:"Sora","Cairo",sans-serif;font-weight:600;font-size:.84rem;color:var(--green-d);
   display:inline-flex;gap:8px;align-items:center}
 .cat-card .more .arw{transition:.3s}
 @media(hover:hover){.cat-card:hover .more .arw{transform:translateX(4px)}}
@@ -917,7 +924,7 @@ h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;lette
 @media(hover:hover){.social a:hover{background:var(--green);border-color:var(--green);color:#fff}}
 
 /* contact info "get directions" link */
-.cinfo .directions{color:var(--green-d);font-family:"Sora",sans-serif;font-weight:600;font-size:.86rem}
+.cinfo .directions{color:var(--green-d);font-family:"Sora","Cairo",sans-serif;font-weight:600;font-size:.86rem}
 
 /* contact form submit + disclaimer */
 .form button[type="submit"]{width:100%;justify-content:center}
@@ -954,3 +961,137 @@ h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.08;font-weight:700;lette
 .u-pt-tight{padding-top:clamp(20px,3vw,32px)}
 .u-pb-tight{padding-bottom:clamp(30px,4vw,52px)}
 .u-bg-cream{background:var(--cream)}
+
+/* ---- Arabic / RTL ----------------------------------------------------- */
+html.lang-ar *{letter-spacing:normal}
+html.lang-ar h1,html.lang-ar h2,html.lang-ar h3,html.lang-ar h4{line-height:1.35}
+/* Arabic phrasing for some page-hero titles runs longer than the English
+   original, wrapping to 3 lines at the same clamp() size and making the
+   banner look oversized/tall — scale it down a bit for Arabic specifically */
+html.lang-ar .phero h1{font-size:clamp(1.9rem,4vw,3.1rem)}
+/* Arabic section titles (.h-lg) commonly run longer than their English
+   original at the same font-size and wrap to 2 lines inside .shead's
+   640px max-width — shrink slightly so titles fit on one line like English */
+html.lang-ar .h-lg{font-size:clamp(1.7rem,3.2vw,2.5rem)}
+html[dir="rtl"] .tl{padding-left:0;padding-right:34px}
+html[dir="rtl"] .tl::before{left:auto;right:8px}
+html[dir="rtl"] .tl-row::before{left:auto;right:-34px}
+html[dir="rtl"] .has-drop .drop{border-left:0;border-right:2px solid var(--line);margin:2px 14px 6px 0}
+html[dir="rtl"] .policy-statement{border-left:0;border-right:5px solid var(--green)}
+html[dir="rtl"] .u-ml-8{margin-left:0;margin-right:8px}
+html[dir="rtl"] .q-card .who>div{text-align:right}
+html[dir="rtl"] .crumb{direction:rtl}
+
+/* dropdown menus anchor from the trigger's left edge by default — under RTL the
+   trigger can sit near the visual left of the mirrored nav, so an unflipped
+   dropdown would overflow off-screen */
+html[dir="rtl"] .has-drop .drop{left:auto;right:0}
+
+/* hero slide gradient + controls are calibrated for LTR (text on the left,
+   dark-to-light gradient running left→right) — mirror both for RTL */
+html[dir="rtl"] .hero .slide::after{background:linear-gradient(270deg,rgba(9,61,31,.92) 0%,rgba(9,61,31,.72) 42%,rgba(9,61,31,.28) 100%)}
+html[dir="rtl"] .hero-controls{right:auto;left:clamp(18px,4vw,40px)}
+html[dir="rtl"] .hero-badges{left:auto;right:clamp(18px,4vw,40px)}
+
+/* diagonal banner-overlay gradients (feat-bg, why, phero, cta bgimg) run
+   top-left→bottom-right — mirror to top-right→bottom-left under RTL */
+html[dir="rtl"] .feat-bg .bgimg::after{background:linear-gradient(240deg,rgba(14,92,47,.93) 22%,rgba(9,61,31,.85))}
+html[dir="rtl"] .why::after{background:linear-gradient(240deg,var(--green-dd) 30%,rgba(9,61,31,.7))}
+html[dir="rtl"] .phero::after{background:linear-gradient(240deg,var(--green-dd) 32%,rgba(9,61,31,.62))}
+html[dir="rtl"] .cta .bgimg::after{background:linear-gradient(240deg,rgba(14,92,47,.93) 22%,rgba(9,61,31,.82))}
+
+/* small absolutely-positioned decorative badges/overlays pinned to one physical
+   side — mirror them so they sit on the correct side of the mirrored layout */
+html[dir="rtl"] .about-media .inset{right:auto;left:-22px}
+html[dir="rtl"] .exp-badge{left:auto;right:-22px}
+@media(max-width:900px){html[dir="rtl"] .exp-badge{right:14px}}
+@media(max-width:600px){html[dir="rtl"] .about-media .inset{left:-10px}html[dir="rtl"] .exp-badge{right:10px}}
+html[dir="rtl"] .stat:not(:last-child)::after{right:auto;left:-15px}
+html[dir="rtl"] .brandtag{left:auto;right:14px}
+html[dir="rtl"] .cat-card .ph .idx{left:auto;right:12px}
+html[dir="rtl"] .lab-card.lc-photo .lc-img .ic{left:auto;right:14px}
+html[dir="rtl"] .lab-card::before{transform-origin:right}
+html[dir="rtl"] .cert-lightbox-close{right:auto;left:14px}
+html[dir="rtl"] .map-pin-label{transform:translate(-6px,-52px)}
+
+/* every <p>/<blockquote> is justified with the last line pinned left (LTR
+   convention) — under RTL that pins the final line to the wrong side, and
+   browsers don't render Arabic kashida justification, so it's less even
+   than Latin justify, but the client wants Arabic to match English's
+   justified paragraphs rather than switch to plain right-align — keep
+   justify, just fix the last-line pin (English pins left, RTL needs right)
+   and drop hyphens (Latin-only feature, no-op for Arabic anyway) */
+html[dir="rtl"] p,html[dir="rtl"] blockquote{text-align:justify;text-align-last:right;hyphens:none;-webkit-hyphens:none}
+
+/* phone numbers/emails are plain LTR content — isolate them from the
+   surrounding RTL paragraph so digits/symbols always render left-to-right,
+   regardless of bidi context. Isolating the link fixes digit order, but its
+   RTL-paragraph parent still right-aligns the block, which reads as "wrong
+   direction" for a phone number — force the whole row left too */
+a[href^="tel:"],a[href^="mailto:"]{direction:ltr;unicode-bidi:isolate}
+html[dir="rtl"] p:has(>a[href^="tel:"]),html[dir="rtl"] p:has(>a[href^="mailto:"]){text-align:right}
+html[dir="rtl"] .contactline .ltr-block{direction:ltr;unicode-bidi:isolate;text-align:right}
+
+/* browsers force direction:ltr by default UA style on tel/email/url/number
+   inputs regardless of the page's dir, so their Arabic placeholder text
+   (e.g. "رقم الهاتف") sat left-aligned instead of matching the field's
+   right-aligned label above it — override back to rtl for these types */
+html[dir="rtl"] .field input[type="tel"],
+html[dir="rtl"] .field input[type="email"],
+html[dir="rtl"] .field input[type="url"],
+html[dir="rtl"] .field input[type="number"]{direction:rtl;text-align:right}
+
+/* infinite-scroll marquees (ISO strip, brand-logo strip, poster gallery) are
+   built as translateX(-50%) loops over a duplicated LTR-ordered set. Flexbox
+   auto-mirrors under dir=rtl, which desyncs the loop from the animation math
+   (content jumps/vanishes/leaves gaps) — keep their internal mechanics LTR
+   regardless of page language; only the caption text (already swapped via
+   data-ar) needs to read in Arabic, not the scroll direction itself */
+.mq-track,.lm-track,.posters-track{direction:ltr}
+
+/* number+unit / number+suffix counters (e.g. "4000 m²", "5+") have no strong
+   RTL character to anchor them, so an RTL paragraph can visually reorder the
+   neutral suffix ahead of the digits — force LTR on all counter displays.
+   EXCEPTION: a <b> that contains a nested translated word (e.g. "8 خطوط",
+   where the span holds a real Arabic word) already has a strong-RTL anchor,
+   so the native bidi algorithm places the leading digit at the RTL start
+   (right) correctly on its own — forcing ltr there instead pushes the
+   Arabic word to the visual-right (reads "خطوط 8"), the opposite of wanted */
+.stat b,.exp-badge b,.fact b:not(:has(span)){direction:ltr;unicode-bidi:isolate}
+/* .fact cards (production.html) aren't centered like .stat/.exp-badge are —
+   direction:ltr resolves text-align:start to left, but the card should read
+   from the right in Arabic like the rest of the page; text-align:right on
+   the .fact itself cascades to both the number and its label, while the
+   direction:ltr above still keeps the number+unit in correct digit order */
+html[dir="rtl"] .fact{text-align:right}
+
+/* footer copyright bar keeps its English-mode layout (copyright left,
+   legal links right) regardless of language — direction:ltr on the child
+   only fixes ITS OWN content order, not where it sits within an RTL-context
+   parent, so the parent needs it too or justify-content:space-between still
+   swaps which side each half renders on */
+.footer .bottom{direction:ltr;text-align:left}
+.footer .bottom>span:last-child{direction:rtl}
+
+/* restore the brand lockup's normal Latin letter-spacing (the blanket
+   letter-spacing reset above is for Arabic text; "Happy Land"/"Food Products"
+   next to the logo are always Latin and should look identical in both langs) */
+html.lang-ar .brand b{letter-spacing:-.02em}
+html.lang-ar .brand small{letter-spacing:.22em}
+html.lang-ar .footer .brand small{letter-spacing:.22em}
+
+/* flag chips: fit on one line and add a hover lift, matching the rest of the
+   site's interactive pill/badge treatment */
+.chips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chips>span{transition:.25s var(--ease)}
+@media(hover:hover){.chips>span:hover{transform:translateY(-3px);box-shadow:var(--shadow-sm);border-color:transparent}}
+
+/* marquees/carousels (ISO ticker, logo strip, poster gallery, testimonials)
+   are built as translateX loops assuming LTR flow. direction:ltr on the
+   track fixes its own children's order, but the track's own POSITION within
+   its RTL-context parent also shifts (a max-content-width block right-aligns
+   under an RTL parent instead of starting flush left), which is what was
+   showing as a blank gap — so the parent needs direction:ltr too, isolating
+   the whole widget from the page's RTL context */
+.marquee,.logo-marquee,.posters,.q-track{direction:ltr}

@@ -12,18 +12,26 @@
 
     if(!product){ window.location.replace("products.html"); return; }
 
+    var isAr = document.documentElement.lang === "ar";
+    var t = { home:"Home", products:"Products", back:"← Back to ", more:"More ", view:"View Details", request:"available on request" };
+    var tAr = { home:"الرئيسية", products:"المنتجات", back:"→ العودة إلى ", more:"المزيد من ", view:"عرض التفاصيل", request:"متوفر عند الطلب" };
+    var L = isAr ? tAr : t;
+
     var category = HL_CATEGORIES[product.category];
+    var categoryName = isAr && category.nameAr ? category.nameAr : category.name;
+    var productTitle = isAr && product.titleAr ? product.titleAr : product.title;
+    var productDesc = isAr && product.descriptionAr ? product.descriptionAr : product.description;
     var images = product.images && product.images.length ? product.images : ["img/fa4ff283-d633-48e6-85d5-4b709a28ac25.jpg"];
 
-    document.title = product.title + " — Happy Land Dairy Products";
+    document.title = productTitle + " — Happy Land Dairy Products";
 
     var bg = document.getElementById("pd-bgimg");
     bg.src = images[0];
-    bg.alt = product.title;
+    bg.alt = productTitle;
 
     var img = document.getElementById("pd-image");
     img.src = images[0];
-    img.alt = product.title;
+    img.alt = productTitle;
 
     /* thumbnail gallery — only shown once a product has more than one photo */
     var thumbsWrap = document.getElementById("pd-thumbs");
@@ -43,10 +51,10 @@
       thumbsWrap.appendChild(b);
     });
 
-    document.getElementById("pd-title").textContent = product.title + ".";
-    document.getElementById("pd-name").textContent = product.title;
-    document.getElementById("pd-category").textContent = category.name;
-    document.getElementById("pd-desc").textContent = product.description;
+    document.getElementById("pd-title").textContent = productTitle + ".";
+    document.getElementById("pd-name").textContent = productTitle;
+    document.getElementById("pd-category").textContent = categoryName;
+    document.getElementById("pd-desc").textContent = productDesc;
 
     var brandEl = document.getElementById("pd-brandtag");
     brandEl.hidden = true;
@@ -66,14 +74,14 @@
     }
 
     document.getElementById("pd-crumb").innerHTML =
-      '<a href="index.html">Home</a> &nbsp;/&nbsp; ' +
-      '<a href="products.html">Products</a> &nbsp;/&nbsp; ' +
-      '<a href="' + category.href + '">' + category.name + '</a> &nbsp;/&nbsp; ' +
-      '<b>' + product.title + '</b>';
+      '<a href="index.html">' + L.home + '</a> &nbsp;/&nbsp; ' +
+      '<a href="products.html">' + L.products + '</a> &nbsp;/&nbsp; ' +
+      '<a href="' + category.href + '">' + categoryName + '</a> &nbsp;/&nbsp; ' +
+      '<b>' + productTitle + '</b>';
 
     var backBtn = document.getElementById("pd-back");
     backBtn.href = category.href;
-    backBtn.textContent = "← Back to " + category.name;
+    backBtn.textContent = L.back + categoryName;
 
     /* highlight the matching nav item (clear any previous highlight first) */
     document.querySelectorAll('.menu a.active').forEach(function(a){ a.classList.remove("active"); });
@@ -85,19 +93,21 @@
     /* other products from the same category */
     var relatedWrap = document.getElementById("pd-related");
     relatedWrap.innerHTML = "";
-    document.getElementById("pd-related-title").textContent = "More " + category.name;
+    document.getElementById("pd-related-title").textContent = L.more + categoryName;
     Object.keys(HL_PRODUCTS).forEach(function(key){
       if(key === slug || HL_PRODUCTS[key].category !== product.category) return;
       var p = HL_PRODUCTS[key];
+      var pTitle = isAr && p.titleAr ? p.titleAr : p.title;
+      var pDesc = isAr && p.descriptionAr ? p.descriptionAr : p.description;
       var a = document.createElement("a");
       a.className = "card";
       a.href = "product-detail.html#" + key;
       a.setAttribute("data-anim", "up");
       a.innerHTML =
         '<div class="ph">' + (p.brandtag ? '<span class="brandtag">' + p.brandtag + '</span>' : '') +
-        '<img src="' + p.images[0] + '" alt="' + p.title + '"></div>' +
-        '<div class="bd"><h3>' + p.title + '</h3><p>' + p.description + '</p>' +
-        '<span class="more">View Details <span class="arw">→</span></span></div>';
+        '<img src="' + p.images[0] + '" alt="' + pTitle + '"></div>' +
+        '<div class="bd"><h3>' + pTitle + '</h3><p>' + pDesc + '</p>' +
+        '<span class="more">' + L.view + ' <span class="arw">' + (isAr?'←':'→') + '</span></span></div>';
       relatedWrap.appendChild(a);
     });
     document.getElementById("pd-related-section").hidden = !relatedWrap.children.length;
@@ -125,9 +135,11 @@
     }
     requestAnimationFrame(revealRelatedVisibleFrame);
 
-    window.scrollTo(0, 0);
   }
 
-  render();
-  window.addEventListener("hashchange", render);
+  function renderAndScroll(){ render(); window.scrollTo(0, 0); }
+
+  renderAndScroll();
+  window.addEventListener("hashchange", renderAndScroll);
+  window.addEventListener("hl:langchange", render);
 })();

@@ -23,25 +23,49 @@
     });
   }
 
-  /* --- language switch (EN / AR) — placeholder for future i18n --- */
+  /* --- language switch (EN / AR): swaps data-ar/data-en(-html) pairs, flips dir --- */
+  function applyLang(lang){
+    var isAr = lang==='ar';
+    document.documentElement.setAttribute('lang', isAr?'ar':'en');
+    document.documentElement.setAttribute('dir', isAr?'rtl':'ltr');
+    document.documentElement.classList.toggle('lang-ar', isAr);
+    document.querySelectorAll('[data-ar]').forEach(function(el){
+      if(!el.hasAttribute('data-en')) el.setAttribute('data-en', el.textContent);
+      el.textContent = isAr ? el.getAttribute('data-ar') : el.getAttribute('data-en');
+    });
+    document.querySelectorAll('[data-ar-html]').forEach(function(el){
+      if(!el.hasAttribute('data-en-html')) el.setAttribute('data-en-html', el.innerHTML);
+      el.innerHTML = isAr ? el.getAttribute('data-ar-html') : el.getAttribute('data-en-html');
+    });
+    document.querySelectorAll('[data-ar-placeholder]').forEach(function(el){
+      if(!el.hasAttribute('data-en-placeholder')) el.setAttribute('data-en-placeholder', el.getAttribute('placeholder')||'');
+      el.setAttribute('placeholder', isAr ? el.getAttribute('data-ar-placeholder') : el.getAttribute('data-en-placeholder'));
+    });
+    document.querySelectorAll('.lang-switch button').forEach(function(b){
+      var on = b.dataset.lang===lang;
+      b.classList.toggle('on', on); b.setAttribute('aria-pressed', on?'true':'false');
+    });
+    window.dispatchEvent(new CustomEvent('hl:langchange', {detail:{lang:lang}}));
+  }
   var navCta=document.querySelector('.nav-cta');
   if(navCta && !navCta.querySelector('.lang-switch')){
     var ls=document.createElement('div');
     ls.className='lang-switch';
     ls.setAttribute('role','group');
     ls.setAttribute('aria-label','Language');
-    ls.innerHTML='<button class="on" data-lang="en" aria-pressed="true">EN</button>'+
-                 '<button data-lang="ar" aria-pressed="false" title="Arabic version coming soon">AR</button>';
+    ls.innerHTML='<button data-lang="en">EN</button>'+
+                 '<button data-lang="ar">AR</button>';
     navCta.insertBefore(ls, navCta.firstChild);
     ls.querySelectorAll('button').forEach(function(b){
       b.addEventListener('click',function(){
-        ls.querySelectorAll('button').forEach(function(x){ x.classList.remove('on'); x.setAttribute('aria-pressed','false'); });
-        b.classList.add('on'); b.setAttribute('aria-pressed','true');
         try{ localStorage.setItem('hl_lang', b.dataset.lang); }catch(e){}
-        /* Future: load Arabic content + set document.dir='rtl'. English-only for now. */
+        applyLang(b.dataset.lang);
       });
     });
   }
+  var savedLang='en';
+  try{ savedLang = localStorage.getItem('hl_lang') || 'en'; }catch(e){}
+  applyLang(savedLang);
 
   /* --- dropdown (click toggle on mobile) --- */
   document.querySelectorAll('.has-drop .drop-t').forEach(function(t){
